@@ -21,6 +21,10 @@
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailErr = "Invalid Email Format !!";
       }
+      # Email Validation Using Regular Expressions : 
+      if (!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^",$email)){
+        $emailErr = "Invalid Email Format !!";
+      }
       if (mysqli_num_rows(mysqli_query($conn,"SELECT * FROM userDetails WHERE Email = '$email'"))>0) {
          $emailErr = "Email Already Exists !! Try Logging In Instead";
       }
