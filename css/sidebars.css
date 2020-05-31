@@ -1,0 +1,24 @@
+.profile-sidebar
+{
+  width: 20vw;
+  position: relative;
+  padding-right:10vw;
+}
+.setting-sidebar
+{
+  width: 20vw;
+  position: relative;
+  padding-left:10vw;
+}
+
+.sticky {
+  background-image: linear-gradient(skyblue, #47e69c);
+  color: white;
+  margin: 1em;
+  margin-top: 2em;
+  padding: 0.3em;
+  height: 20em;
+  position: sticky;
+  top: 8em;/* Where it stops */
+
+}
