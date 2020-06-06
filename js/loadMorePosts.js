@@ -5,9 +5,6 @@ $(document).ready(function(){
         var Popu = $(".loading-button").attr('id');
         $('.load-more-button').hide();
         $('.loading-button').show();
-        //var update_text="<span>&nbsp;success!</span>";
-        //$(update_text).hide().appendTo('#novegis').fadeIn();
-        //setTimeout(function(){ $('#novegis > span').fadeOut(); },600);
         $.ajax({
             type:'POST',
             url:'../php/loadMorePosts.php',
@@ -19,7 +16,6 @@ $(document).ready(function(){
                 //$('.post-feed').append(html);
                 $(html).hide().appendTo(".post-feed").fadeIn(1000);
                 updateReactions();
-                darkMode();
                 if ($('#load-more'+pid).length)
                 {
                   //var lastPopu= $('.loading-button').attr('id');
