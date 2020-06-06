@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(document).on('click','.post-feed-view-button',function(){
         var ID = $(this).attr('id');
         var postId = ID.substring(ID.lastIndexOf("-") + 1, ID.length);
-        $('#extra2').html("| PostID:"+ID+" VIEW |");
+        //console.log("PostID : "+ID+" View");
         document.body.style.overflow = "hidden";
         document.getElementById("leo-navbar").style.top = "0";
         //$('.load-more-button').hide();
@@ -15,9 +15,8 @@ $(document).ready(function(){
                 //$('#load-more'+ID).remove();
                 //alert("AJAX request successfully completed");
                 //$('.home-content').append(html);
+                document.getElementById("leo-navbar").style.top = "0";
                 $(html).hide().appendTo(".head-content").fadeIn(300);
-                darkMode();
-
                 }
 
               }
@@ -47,7 +46,7 @@ $(document).ready(function(){
               }
                 else
                 {
-                 alert("Could not Post The Comment :(");
+                 alert("Could not Post The Comment :( Try Again !!");
                 }
 
               }
