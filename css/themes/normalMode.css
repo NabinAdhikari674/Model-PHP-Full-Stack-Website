@@ -1,0 +1,272 @@
+
+body{
+  background-color:black;
+}
+input {
+  /*background-color:#25292b;*/
+  /*login/reg:background-color:#5e9cff;*/
+  background-color:#3c619e;
+  border-bottom: 1px solid #999;
+  color: white;
+}
+input:focus { /*#bdd4ff;*/
+  background-color: black;
+  box-shadow: 0px 0px 2px rgba(0,100,255,1),
+              0px 0px 2px rgba(0,100,255,1),
+              0px 0px 3px rgba(0,100,255,1);
+}
+small{
+   color:grey;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #00d19e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #009973;
+}
+
+
+
+/*======================== INDEX =========================================*/
+
+
+.extra{
+  background-color:#343a40;
+}
+.extra1{
+  background-color:black;
+}
+.extra2{
+  background-color:#e6eeff;
+}
+.head-content{
+  background: linear-gradient(#eee ,skyblue);
+}
+
+
+/*======================== MASTER =========================================*/
+
+
+
+.reg-body, .login-body
+{
+  background-image:url('https://i.ibb.co/2t6xVJp/back.png');
+  /*https://i.ibb.co/K93RBcG/Back.png*/
+  /*background-color:#dce4f5;*/
+}
+.alert-user{
+  background-color: #0fbf99;
+  color: white;
+}
+.closebtn-alert {
+  color: white;
+}
+.closebtn-alert:hover {
+  color: black;
+}
+
+.error { color: #FF0000; }
+/*Navbar COlor : #343a40 , darkslategray , rgb(52,58,64) */
+.leo-navbar{
+  color:grey;
+  background: #343a40;
+}
+.halfTransparency
+{
+  background-image:linear-gradient(90deg,
+  rgba(52,58,64,1) 10%,rgba(52,58,64,1) 1.4%,
+  rgba(0, 0, 0,0) 24.1%,rgba(0, 0, 0,0) 76.4%,
+  rgba(52,58,64,1) 101.3%,rgba(52,58,64,1) 101.3%);
+}
+.user-content {
+  /*background-color: #e6eeff;*/
+}
+.new-post-form {
+  box-shadow: 0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 5px rgba(75, 105, 101,1);
+
+}
+.user-posts {
+  /*background-image: linear-gradient(#e6eeff, skyblue);*/
+  box-shadow: 0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 5px rgba(75, 105, 101,1);
+}
+.user-post-card {
+  /*background-image: linear-gradient(#e6eeff, skyblue);*/
+  box-shadow: 0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 2px rgba(75, 105, 101,1),
+              0px 0px 5px rgba(75, 105, 101,1);
+}
+.user-post-text {
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.user-card-post-view {
+  background-color:#5e9cff;
+}
+.user-card-post-view:hover { background:#03658c; }
+.reg-content, .login-content {
+  background-color:#e6eeff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+/* ======================== POSTFeed ========================================= */
+
+
+.post-feed {
+  background-image: linear-gradient(skyblue, #47e69c);
+}
+.post-feed-card{
+  background-color: #eee;
+}
+.post-feed-text {
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.post-feed-reactUp,.post-feed-reactDown {
+  color:grey;
+  background-color: #eee;
+}
+.post-feed-view-button {
+  background-color:#5e9cff;
+}
+.post-feed-reactUp:hover { color:black; }
+.post-feed-reactDown:hover {  color:black; }
+.post-feed-view-button:hover { background:#03658c;}
+.load-more {
+  background: #5f80b9;
+}
+.load-more-button, .load-complete {
+  color: black;
+}
+.load-more-button:hover {
+  color: blue;
+}
+.load-complete:hover{
+  color:grey;
+}
+
+
+
+/* ======================== DETAILEDPost ========================================= */
+
+
+
+.detailed-post-page {
+  /* rgb(71, 230, 156) = #47e69c */
+  background-image: linear-gradient(rgba(135, 206, 235,0.9), rgba(71, 230, 156,0.96));
+}
+.close-detailed-post-button {
+  background-color:#5e9cff;
+}
+.close-detailed-post-button:hover {
+  color:white;
+  background-color:#2c4978;
+}
+.detailed-post-card {
+  background-color: #eee;
+}
+.detailed-post-text {
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.detailed-post-reactUp, .detailed-post-reactDown, .detailed-post-comment,.detailed-post-share {
+  color:grey;
+}
+.detailed-post-reactUp:hover { color:black; }
+.detailed-post-reactDown:hover { color:black; }
+.detailed-post-comment:hover { color:black; }
+.detailed-post-share:hover { color:black; }
+.new-comment-post-box {
+  background: #e8ebed;
+}
+.close-comment-post-button {
+  color: black;
+}
+.close-comment-post-button:hover{color:#0fbf99;}
+.post-a-new-comment {
+  border-color: grey;
+  color:grey;
+}
+.post-a-new-comment:hover {
+  color:black;
+  border-color: black;
+}
+.alert-user-cmt-div {
+  background-color: #0fbf99;
+  color: white;
+}
+.comments-feed {
+  background: #dee1e3;
+}
+.user-avatar {
+  /*#FFF*/
+  border: 3px solid grey;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.comment-head {
+  background:#ebeff2 ;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.comment-author {
+  color: #03658c;
+}
+.comment-author a { color: #03658c; }
+.user-tag {
+  background: #03658c;
+	color: #FFF;
+}
+.last-updated {
+  color: grey;
+}
+.comment-reply, .comment-heart {
+  color: grey;
+}
+.comment-head .comment-react i:hover { color: #03658c; }
+.comment-content {
+  background:#f5f8fa;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.no-content {
+  background:#f5f8fa;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.comment-head:before, .comment-head:after {
+  border-color: transparent #2f3e48;
+}
+.comment-head:before {
+	border-color: transparent rgba(0,0,0,0.05);
+}
+
+
+
+/* ======================== SIDEBARS ========================================= */
+
+
+.sticky {
+  background-image: linear-gradient(skyblue, #47e69c);
+  color: white;
+}
