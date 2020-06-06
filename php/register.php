@@ -140,7 +140,7 @@
           <input type="radio" name="agreeCnd" <?php if (isset($agreeCnd) && $agreeCnd=="disAgree") echo "Checked";?> value="disAgree">  I Disagree
           <span class="error"> * <?php echo $agreeCndErr;?></span>
           <br><br>
-          <input style="background-color:#5e9cff;border-width: 1px;border-radius:8px;cursor: pointer;" type="submit" name="SubmitForm" value="Register">
+          <input style="border-width: 1px;border-radius:8px;cursor: pointer;" type="submit" name="SubmitForm" value="Register">
         </form>
       </div>
       <div class="reg-image">

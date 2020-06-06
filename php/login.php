@@ -100,7 +100,7 @@
           <input type="password" name="password" placeholder="Password" value="<?php echo $password;?>" required>
           <span class="error"> * <?php echo $passErr;?></span>
           <br><br>
-          <input style="background-color:#5e9cff;border-width: 1px;border-radius:8px;cursor: pointer;" type="submit" name="submit" value="LogIn">
+          <input style="border-width: 1px;border-radius:8px;cursor: pointer;" type="submit" name="submit" value="LogIn">
         </form>
       </div>
       <div class="login-image">
