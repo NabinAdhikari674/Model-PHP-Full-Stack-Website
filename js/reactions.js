@@ -20,7 +20,7 @@ $(document).ready(function(){
                 $('#post-feed-reactUp-'+postId).val(1);
                 $('#post-feed-reactDown-'+postId).css("color", "grey");
                 $('#post-feed-reactDown-'+postId).val(0);
-                $('#extra2').html("| PostID:"+postId+" Upped |");
+                console.log("| PostID:"+postId+" Upped |");
                 updatePopPanel(postId,buttonValue,aStatus,'up');
 
               }
@@ -28,7 +28,7 @@ $(document).ready(function(){
               {
                 $('#'+ID).css("color", "grey");
                 $('#post-feed-reactUp-'+postId).val(0);
-                $('#extra2').html("| PostID:"+postId+" UpRetracted |");
+                console.log("| PostID:"+postId+" UpRetracted |");
                 updatePopPanel(postId,buttonValue,aStatus,'up');
               }
               else if(response=='NewReaction')
@@ -37,11 +37,11 @@ $(document).ready(function(){
                 $('#post-feed-reactUp-'+postId).val(1);
                 $('#post-feed-reactDown-'+postId).css("color", "grey");
                 $('#post-feed-reactDown-'+postId).val(0);
-                $('#extra2').html("| *PostID:"+postId+" Upped |");
+                console.log("| *PostID:"+postId+" Upped |");
                 updatePopPanel(postId,buttonValue,aStatus,'up');
               }
               else
-              { $('#extra2').html(response); }
+              { console.log(response); }
             }
         });
     });
@@ -67,14 +67,14 @@ $(document).ready(function(){
                 $('#post-feed-reactDown-'+postId).val(1);
                 $('#post-feed-reactUp-'+postId).css("color", "grey");
                 $('#post-feed-reactUp-'+postId).val(0);
-                $('#extra2').html("| PostID:"+postId+" Meh-ed |");
+                console.log("| PostID:"+postId+" Meh-ed |");
                 updatePopPanel(postId,buttonValue,aStatus,'down');
               }
               else if (response=='Updated')
               {
                 $('#'+ID).css("color", "grey");
                 $('#post-feed-reactDown-'+postId).val(0);
-                $('#extra2').html("| PostID:"+postId+" MehRetracted |");
+                console.log("| PostID:"+postId+" MehRetracted |");
                 updatePopPanel(postId,buttonValue,aStatus,'down');
               }
               else if(response=='NewReaction')
@@ -83,11 +83,11 @@ $(document).ready(function(){
                 $('#post-feed-reactDown-'+postId).val(1);
                 $('#post-feed-reactUp-'+postId).css("color", "grey");
                 $('#post-feed-reactUp-'+postId).val(0);
-                $('#extra2').html("| *PostID:"+postId+" Meh-ed |");
+                console.log("| *PostID:"+postId+" Meh-ed |");
                 updatePopPanel(postId,buttonValue,aStatus,'down');
               }
               else
-              { $('#extra2').html(response); }
+              { console.log(response); }
             }
         });
     });
@@ -96,8 +96,6 @@ $(document).ready(function(){
 
 function updateReactions()
 {
-  document.getElementById("extra2").style.color = "white";
-  document.getElementById("extra2").style.background = "#0fbf99";
   $.ajax({
       type:'POST',
       url:'../php/reactionsCheck.php',
@@ -129,7 +127,7 @@ function updateReactions()
           });
         }
         else {
-          document.getElementById("extra2").innerHTML += " Update Reaction Request to updateReactions.php ERROR";
+          console.log(" Update Reaction Request to updateReactions.php ERROR");
         }
           //$("#load-more"+ID+8).detach().appendTo("#post-feed");
       }
@@ -144,9 +142,6 @@ function updatePostReaction()
 
 function updatePopPanel(postId,status,aStatus,flow)
 {
-  //document.getElementById("extra2").style.color = "white";
-  //document.getElementById("extra2").style.background = "#0fbf99";
-
   var counter = parseInt($("#popu-counter-"+postId).html());
 
   if(flow=='up')
@@ -194,8 +189,5 @@ function updatePopPanel(postId,status,aStatus,flow)
       $("#popu-msg-"+postId).html("~ You Retracted Meh !");
      }
   }
-
-  //$('#extra2').append("ID: "+postId+" aS: "+aStatus+" flow: "+flow);
-
 
 }
