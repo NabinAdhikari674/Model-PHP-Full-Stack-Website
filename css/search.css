@@ -1,0 +1,28 @@
+.searchPage
+{
+  position: fixed;
+  display:block;
+  overflow-y: scroll;
+  padding:1em;
+  width: 100%;
+  height: 100%;
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:2;
+}
+.closeSearchPageButton
+{
+  border-width: 0px;
+  border:none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 20px;
+  padding :2px 15px 6px 15px;
+  cursor: pointer;
+  transition: 0.1s;
+  margin-bottom: 1em;
+}
+.closeSearchPageButton:hover { }
