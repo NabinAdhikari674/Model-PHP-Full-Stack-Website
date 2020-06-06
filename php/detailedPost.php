@@ -35,10 +35,10 @@
             <form method="post" class="detailed-post-react">
               <button type="button" class="detailed-post-reactUp" id="post-feed-reactUp-<?php echo $card['PostId'];?>" value=0 >&#9650;Up</button>
               <button type="button" class="detailed-post-reactDown" id="post-feed-reactDown-<?php echo $card['PostId'];?>" value=0 >&#9660;Meh!</button>
-              <button type="button" class="detailed-post-comment" id="post-feed-reactDown-<?php echo $card['PostId'];?>" >
+              <button type="button" class="detailed-post-comment" id="post-feed-comment-<?php echo $card['PostId'];?>" >
                 <i class="fas fa-comment-alt" style="font-size:15px;"></i> Comment
               </button>
-              <button type="button" class="detailed-post-share" id="post-feed-reactDown-<?php echo $card['PostId'];?>" >
+              <button type="button" class="detailed-post-share" id="post-feed-share-<?php echo $card['PostId'];?>" >
                 <i class="fas fa-share-alt-square" style="font-size:17px;"></i> Share
               </button>
             </form>
@@ -49,9 +49,9 @@
           <small>Commenting as : <?php echo $loggedUser; ?></small>
           <span class="close-comment-post-button"> &times; </span>
           <form method="post" class="new-comment-post-form">
-            <textarea name="newCommentPost" id ="newCommentPost-<?php echo $postId;?>" placeholder=" What are your thoughts ?" required="required"></textarea>
+            <textarea name="newCommentPost" class= "newCommentPost" id ="newCommentPost-<?php echo $postId;?>" placeholder=" What are your thoughts ?" required="required"></textarea>
             <button type="button" class="post-a-new-comment" id="post-a-new-comment-<?php echo $postId;?>" >
-              <i class="fas fa-comment-alt" style="font-size:15px;"></i> Comment
+              <i class="fas fa-comment-alt" style="font-size:15px;"></i> Publish
             </button>
           </form>
           <div class="alert-user-cmt-div" style="display:none;">
