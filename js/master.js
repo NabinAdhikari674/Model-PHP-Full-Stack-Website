@@ -1,56 +1,97 @@
 $(document).ready(function(){
-  //$(document).on('click','.post-feed-view-button',function(){
-  //  $.ajax({});
-  //});
-  darkMode();
-  //normalMode();
+    document.getElementById("leo-navbar").style.top = "0";
+    $('.themeMsg').html("Toggle to Switch Theme");
+    const themeCSS = document.getElementById('theme');
+    const storedTheme = localStorage.getItem('theme');
+    if(storedTheme){
+        themeCSS.href = storedTheme;
+        //console.log("Notice : Theme Toggled from LocalStorage Data");
+    }
+    $(document).on('click','.themeSwitch',function(){
+      //console.log("Request : Toggle Theme");
+      if(themeCSS.href.includes('normalMode'))
+      {
+            themeCSS.href = 'css/themes/darkMode.css';
+            //console.log("Notice : Theme Toggled To Dark Mode");
+            $('.themeMsg').html("Toggle to Switch Theme");
+      }
+      else if (themeCSS.href.includes('darkMode'))
+      {
+            themeCSS.href = 'css/themes/normalMode.css';
+            //console.log("Notice : Theme Toggled To Normal Mode");
+            $('.themeMsg').html("Toggle to Switch Theme");
+      }
 
+      localStorage.setItem('theme',themeCSS.href);
+
+    });
+
+
+    $('.search-query-field').keypress(function(e){
+        if(e.which == 13){
+          //e.preventDefault(); //prevent page refresh on press "ENTER"
+          $('.search-query-button').click();
+        }
+    });
+    $(document).on('click','.search-query-button',function(){
+      //console.log("Search Requested");
+      document.body.style.overflow = "hidden";
+      document.getElementById("leo-navbar").style.top = "0";
+      var sQuery = $('.search-query-field').val();
+      if (sQuery)
+      {
+        $.ajax({
+            type:'GET',
+            url:'../php/search.php',
+            data: {sQuery: sQuery},
+            success:function(html){
+              if(html){
+                document.getElementById("leo-navbar").style.top = "0";
+                //console.log("Sucessful Search Req Performed");
+                $(html).hide().appendTo(".head-content").fadeIn(300);
+                }
+              }
+        });
+      }
+      else { //console.log("Empty Search Query");
+      }
+    });
+    $(document).on('click','.closeSearchPageButton',function(){
+      $('.searchPage').remove();
+      document.body.style.overflow = "scroll";
+    });
+
+
+
+    $('.newPostContent').keypress(function(e){
+        if(e.which == 13){
+          //e.preventDefault(); //prevent page refresh on press "ENTER"
+          //$('.new-post-submit-button').click();
+        }
+    });
+    $(document).on('click','.new-post-submit-button',function(){
+      //console.log("New Post Submit Req");
+      var newPostTitle = $('.newPostTitle').val();
+      var newPostContent = $('.newPostContent').val();
+      if (newPostContent && newPostTitle)
+      {
+        console.log("Trying to Submit New Post ");
+        $.ajax({
+            type:'POST',
+            url:'../php/newPost.php',
+            data: {newPostTitle: newPostTitle, newPostContent:newPostContent},
+            success:function(html){
+              if(html){
+                alert("Your Post\n  Title : "+newPostTitle+"\nis now Live :)");
+                $('.newPostTitle').val("");
+                $('.newPostContent').val("");
+                $(html).hide().prependTo(".post-feed").fadeIn(1000);
+                console.log("Sucessful Post Submission ");
+                }
+              }
+        });
+
+      }
+      else { console.log("Empty New Post"); }
+    });
 });
-function darkMode()
-{
-    //$(body).css("color", "white");
-    //Meh:#ba7f7e;
-    //TextInputBackground : #181a1b;
-    //document.querySelector("div[unique='custom name'] ol").style.color = "blue";
-    //document.querySelector("input").style.background = "grey";
-    document.getElementById("leo-navbar").style.background= "black";
-    document.getElementById("leo-navbar").style.color= "grey";
-    //document.getElementById("head-content").style.background= "black";
-    $("#head-content").css("background", "#050505");
-    $(".new-post-form").css("background", "#343a40");
-    $(".user-post-card").css("background", "#343a40");
-    document.body.style.color = "#d1d1d1";
-    document.body.style.backgroundColor = "#212121";
-    $(".home-content").css("background-color", "#343a40");
-    $(".post-feed").css("background-image", "linear-gradient(#12313b, #138e55)");
-    $(".sticky").css("background-image", "linear-gradient(#12313b, #138e55)");
-    $(".post-feed-card").css("background-color", "#1d1f20");
-    $(".post-feed-card").css("color", "#d1d1d1");
-    $(".post-feed-reactUp").css("background-color", "#181a1b");
-    $(".post-feed-reactDown").css("background-color", "#181a1b");
-    $(".detailed-post-page").css("background-image", "linear-gradient(#12313b, #138e55)");
-    $(".detailed-post-card").css("background-color", "#1d1f20");
-    $(".detailed-post-card").css("color", "#b5b5b5");
-    $(".detailed-post-reactUp").css("background-color", "#181a1b");
-    $(".detailed-post-reactDown").css("background-color", "#181a1b");
-    $(".detailed-post-comment").css("background-color", "#181a1b");
-    $(".detailed-post-share").css("background-color", "#181a1b");
-    $(".new-comment-post-box").css("background-color", "grey");
-    $(".comments-feed").css("background-color", "#1d1f20");
-    $(".comments-feed").css("color", "#d1d1d1");
-    $(".comment-head").css("background-color", "#1d1f20");
-    $(".comment-content").css("background-color", "#1d1f20");
-    $(".no-content").css("background-color", "#1d1f20");
-
-
-}
-function normalMode()
-{
-  document.getElementById("leo-navbar").style.color= "grey";
-  document.getElementById("leo-navbar").style.background= "#343a40";
-  $("#head-content").css("background", "linear-gradient(#eee ,skyblue)");
-  $(".post-feed").css("background-image", "linear-gradient(skyblue, #47e69c)");
-  $(".post-feed-card").css("background-color", "#eee");
-  $(".post-feed-reactUp").css("background-color", "#eee");
-  $(".post-feed-reactDown").css("background-color", "#eee");
-}
