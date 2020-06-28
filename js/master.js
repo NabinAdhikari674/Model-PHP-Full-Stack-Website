@@ -9,7 +9,7 @@ $(document).ready(function(){
     }
     $(document).on('click','.themeSwitch',function(){
       //console.log("Request : Toggle Theme");
-      if(themeCSS.href.includes('normalMode'))
+      if(themeCSS.href.includes('normalMode*'))
       {
             themeCSS.href = 'css/themes/darkMode.css';
             //console.log("Notice : Theme Toggled To Dark Mode");
